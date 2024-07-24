@@ -1,0 +1,25 @@
+{
+  "name": "search-debounce-react",
+  "version": "1.0.0",
+  "description": "This is a search input for react with debouncing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erthakurdixit/search-debounce-react.git"
+  },
+  "keywords": [
+    "search",
+    "debounce",
+    "react",
+    "npm"
+  ],
+  "author": "Dixit Thakur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erthakurdixit/search-debounce-react/issues"
+  },
+  "homepage": "https://github.com/erthakurdixit/search-debounce-react#readme"
+}
