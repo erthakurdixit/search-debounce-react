@@ -9,9 +9,11 @@ const Search = (props: {
   className?: string;
   maxLength?: number;
   minCharacterCount?: number;
-  func?: Function;
+  callbackFunc?: Function;
+  onfocusFunc?: Function;
   setResponse?: Function;
   setError?: Function;
+  delay?: number;
 }) => {
 
   const {
@@ -19,18 +21,20 @@ const Search = (props: {
     className = '',
     maxLength = 100,
     minCharacterCount = 0,
-    func = (apiSearchValue: any) => { },
+    callbackFunc = (apiSearchValue: any) => { },
+    onfocusFunc = (e: any) => { },
     setResponse = (res: any) => { },
-    setError = (err: any) => { }
+    setError = (err: any) => { },
+    delay = 500
   } = props
 
-  const { searchValue, apiSearchValue, handleSearchInput } = useDebouncing();
+  const { searchValue, apiSearchValue, handleSearchInput } = useDebouncing(delay);
 
   useEffect(() => {
     if (apiSearchValue?.length > minCharacterCount) {
       (async () => {
         try {
-          const response = await func(apiSearchValue);
+          const response = await callbackFunc(apiSearchValue);
           setResponse(response)
         } catch (error) {
           setError(error)
@@ -49,6 +53,7 @@ const Search = (props: {
       handleChange={handleSearchInput}
       className={className}
       maxLength={maxLength}
+      onfocusFunc={onfocusFunc}
     />
   )
 }

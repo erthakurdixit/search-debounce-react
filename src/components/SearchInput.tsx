@@ -1,13 +1,15 @@
 import React from "react"
 
-const SearchInput = ({ placeholder = '', value = '', handleChange = (e:any) => { }, className = '', maxLength = 100 }) => {
+const SearchInput = (props: any) => {
 
+    const { placeholder = '', value = '', handleChange, onfocusFunc, className = 'search-input', maxLength } = props
     return (
         <input
             placeholder={placeholder}
             value={value}
             onChange={handleChange}
             className={className}
+            onFocus={onfocusFunc}
             type='search'
             aria-label='Search'
             maxLength={maxLength}

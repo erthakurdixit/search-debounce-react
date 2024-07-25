@@ -1,8 +1,6 @@
-import debounce from "lodash.debounce";
 import { useCallback, useState } from "react"
-
-const useDebouncing = (delay = 600) => {
-
+import debounce from "lodash/debounce";
+const useDebouncing = (delay: any) => {
     const [searchValue, setSearchValue] = useState("");
     const [apiSearchValue, setApiSearchValue] = useState("");
 
