@@ -1,6 +1,6 @@
 {
   "name": "search-debounce-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a search input for react with debouncing.",
   "main": "dist/index.js",
   "type": "module",
